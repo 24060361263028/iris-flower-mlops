@@ -1,0 +1,26 @@
+# Git Ignore
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+mlruns/
+.mlflow/
+*.db
+
+# DVC local files
+/data/raw/*.csv
+/data/processed/*.csv
+/models/*.joblib
+!/data/raw/.gitkeep
+!/data/processed/.gitkeep
+!/models/.gitkeep
+!/metrics/.gitkeep
+.dvc/cache
+.dvc/tmp

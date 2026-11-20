@@ -1,0 +1,13 @@
+.git
+.github
+.dvc
+.dvcignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+mlruns
+.coverage
+tests/

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  iris-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: iris-flower-mlops:latest
+    container_name: iris-flower-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=models/model.joblib
+    restart: unless-stopped
