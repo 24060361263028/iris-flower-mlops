@@ -4,6 +4,7 @@ from typing import List, Dict
 import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 # App initialization
@@ -11,6 +12,15 @@ app = FastAPI(
     title="Iris Flower Classification API",
     description="MLOps production service to classify Iris species based on sepal & petal measurements.",
     version="1.0.0",
+)
+
+# Enable CORS for Swagger UI and all web frontends
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 MODEL_PATH = os.environ.get("MODEL_PATH", "models/model.joblib")
